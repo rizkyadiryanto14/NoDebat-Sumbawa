@@ -2,6 +2,12 @@
 
 NoDebat adalah aplikasi web sederhana untuk manajemen penggunaan obat pasien. Aplikasi memudahkan perawat mendata pasien beserta jadwal obatnya dan memberi pasien pengingat kapan harus minum obat melalui status warna yang jelas pada dashboard mereka. Penjadwalan dosis dihitung otomatis oleh sistem berdasarkan rentang waktu (jam) dan frekuensi (kali per hari) yang diisi perawat saat menambahkan obat.
 
+## Alamat Aplikasi
+
+Aplikasi dapat diakses melalui:
+
+**[https://nodebat.adiworks.tech](https://nodebat.adiworks.tech)**
+
 ## Stack Teknologi
 
 | Kategori | Teknologi | Versi |
@@ -200,24 +206,29 @@ erDiagram
 | 9. Jalankan PHP server | `php artisan serve` |
 | 10. Bersamaan: server + queue + log + vite | `composer run dev` |
 
-## Akun Default
+## Akun Demo dan Testing
 
 | Role | Email | Password |
 | --- | --- | --- |
 | Perawat | `perawat@nodebat.local` | `password` |
+| Pasien | `pasien.demo@nodebat.local` | `password` |
 
-Pasien tidak diseed. Buat lewat menu Tambah Pasien — kredensial akan otomatis dibuat dan ditampilkan pada halaman detail pasien.
+Kedua akun dibuat melalui `php artisan migrate --seed`. Akun pasien dilengkapi data obat dan riwayat dummy untuk menguji status sudah diminum, mendekati waktu, terlewat, dan belum diminum.
+
+> Kredensial di atas hanya untuk demo dan testing. Ganti kata sandi atau nonaktifkan akun demo sebelum aplikasi digunakan untuk data pasien sebenarnya.
 
 ## Penggunaan Awal
 
 | Tahap | Aksi |
 | --- | --- |
-| 1 | Login sebagai perawat menggunakan kredensial seeder |
-| 2 | Tambahkan pasien dari menu Pasien — kredensial muncul di halaman detail |
-| 3 | Bagikan email + password ke pasien |
-| 4 | Tambahkan obat pada halaman detail pasien (isi interval jam dan frekuensi per hari) |
-| 5 | Pasien login dan menandai dosis yang sudah diminum |
-| 6 | Perawat memantau dashboard untuk dosis yang mendekati waktu dan dosis yang terlewat |
+| 1 | Buka `https://nodebat.adiworks.tech` |
+| 2 | Login sebagai perawat menggunakan kredensial seeder |
+| 3 | Gunakan akun pasien demo untuk menguji jadwal, status, dan riwayat obat |
+| 4 | Tambahkan pasien sebenarnya dari menu Pasien — kredensial muncul di halaman detail |
+| 5 | Bagikan email dan kata sandi kepada pasien melalui saluran yang aman |
+| 6 | Tambahkan obat pada halaman detail pasien |
+| 7 | Pasien login dan menandai dosis yang sudah diminum |
+| 8 | Perawat memantau dashboard untuk dosis mendekati waktu, terlewat, dan riwayat terbaru |
 
 ## Struktur Direktori
 
